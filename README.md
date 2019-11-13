@@ -1,4 +1,4 @@
-MercadoLibre - Ejercicio Mails
+						MercadoLibre - Ejercicio Mails
 
 Este documento describe cómo ejecutar el script para buscar y cargar en la base de datos todos los mails que contengan la palabra “DevOps” en el Subject de una cuenta específica.
 
@@ -13,7 +13,7 @@ Instalacion ::
 - Desde cualquier consola verificar la instalación de docker mediante el siguiente comando	
         Docker-compose --version
 - Una vez que tenemos docker-compose instalado correctamente ejecutamos el siguiente comando desde la carpeta del proyecto
-		Docker-compose up
+	Docker-compose up
 - Cuando termine de correr el docker-compose se habran cargado los mails en la base de datos mysql
 - Verificar los datos(base de datos/ registros en la tabla EMAIL) cargados desde la pagina localhost:8080 accediendo con las siguientes credenciales
         user :: root
