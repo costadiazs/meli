@@ -8,10 +8,10 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "meli"
     volumes:
-      - /var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
     networks:
       meli:
-  phpmyadmin:
+  phpmyadmin1:
     depends_on:
       - mysql
     image: phpmyadmin/phpmyadmin
@@ -23,12 +23,13 @@ services:
       MYSQL_ROOT_PASSWORD: root 
     networks:
       - meli
-  python3:
-    image: python3
+  python:
     depends_on:
       - mysql
     build: .
     command: python3 -u quickstart.py
+    volumes:
+      - .:/meli
     links:
       - mysql:db
     networks:
