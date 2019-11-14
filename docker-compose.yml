@@ -7,6 +7,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "meli"
+    volumes:
+      - /var/lib/mysql
     networks:
       meli:
   phpmyadmin:
@@ -21,11 +23,12 @@ services:
       MYSQL_ROOT_PASSWORD: root 
     networks:
       - meli
-  python2.7.2:
+  python3:
+    image: python3
     depends_on:
       - mysql
     build: .
-    command: python -u santi.py
+    command: python3 -u quickstart.py
     links:
       - mysql:db
     networks:

@@ -3,13 +3,13 @@ import mysql.connector
 
 class Dao:
 
-   serverName = "db"
+   serverName = "172.17.0.1"
    serverUser = "root"
    serverPassword = "root"
    serverDb = "meli"
    
    def __init__(self):
-      print "Calling data access layer"
+      print("Calling data access layer")
 
    def execute(self, sql):
       try:
@@ -41,7 +41,7 @@ class Dao:
 
    def createTable(self):
        # Create table as per requirement
-      self.execute("CREATE TABLE EMAIL (NAME  VARCHAR(200) NULL, SUBJECT  VARCHAR(200) NULL, EMAIL VARCHAR(150) )")
+      self.execute("CREATE TABLE EMAIL (NAME  VARCHAR(200) NULL, SUBJECT  VARCHAR(200) NULL, EMAIL VARCHAR(300) )")
    
    def dropTable(self):
       # Create table as per requirement
